@@ -1,0 +1,46 @@
+table {
+    width: 1000px;
+    margin-left: 30px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0,0,0,0.1);
+  }
+  
+th,
+td {
+    padding: 15px;
+    background-color: rgba(28, 121, 56, 0.2);
+    border: 2px solid white;
+  }
+  
+th {
+    text-align: center;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+  }
+  
+thead th{
+      background-color: black;
+    }
+  
+tbody tr :hover {
+        background-color: rgba(255,255,255,0.3);
+}
+td {
+      position: relative;
+      color: rgb(0, 0, 0);
+      font-size: 17px;
+      font-weight: bold;
+  }
+ td:hover ::before{
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -9999px;
+          bottom: -9999px;
+          background-color: rgba(255,255,255,0.2);
+          z-index: -1;
+        }
+      

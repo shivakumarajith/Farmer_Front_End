@@ -1,0 +1,44 @@
+<body>
+  <div class="main">
+    <form (ngSubmit)="checkLogin()">
+      <div class="login-box" style="border-radius: 5%; box-shadow: black">
+        <img
+          src="assets/AdminBack.png"
+          width="135"
+          height="135"
+          style="display: block; margin-left: auto; margin-right: auto"
+        />
+        <h1
+          style="
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+          "
+        >
+          Admin Login
+        </h1>
+        <br />
+
+        <label for="t2" class="idspace">Enter Email ID: </label>
+        <input
+          type="email"
+          name="t2"
+          [(ngModel)]="emailid"
+          required
+        /><br /><br />
+
+        <label for="t3" class="passspace">Enter Password: </label>
+        <input
+          type="password"
+          name="t3"
+          [(ngModel)]="password"
+          required
+          minlength="6"
+        /><br /><br />
+
+        <div style="text-align: center">
+          <button type="submit" class="btn">Login</button><br /><br />
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

@@ -1,0 +1,148 @@
+
+<div>
+  <h1
+    style="
+      margin-left: 400px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    "
+  >
+    Insurance Claim
+  </h1>
+</div>
+<span> </span>
+<div>
+  <table class="main">
+    <thead>
+      <tr>
+        <th>Claim ID</th>
+        <th>Insuree Id</th>
+        <th>Farmer ID</th>
+        <th>Insuree Name</th>
+        <th>Cause of Loss</th>
+        <th>Date of Loss</th>
+        <th>Amount</th>
+        <th>Claim approval</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let i of claims">
+        <td>{{ i.claimId }}</td>
+        <td>{{ i.insurance.insuranceId }}</td>
+        <td>{{ i.farmer.farmerId }}</td>
+        <td>{{ i.insureeName }}</td>
+        <td>{{ i.causeofloss }}</td>
+        <td>{{ i.dateofloss }}</td>
+        <td>{{ i.amount }}</td>
+        <td>{{ i.claimapproval }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br />
+<button style="margin-right: 500px" class = "approve" (click)="claim()">
+  Claim Insurance
+</button>
+<br />
+<br />
+<div *ngIf="div1" >
+<form (ngSubmit)="Submitdata()">
+    <div class="login-box" style=" border-radius: 5%; box-shadow: black;">
+       
+        <h1 style="text-align: center;">Claim Application</h1><br>
+
+      <label for="t1"> Insuree Id: </label>
+      <input
+        type="number"
+        name="t1"
+        [(ngModel)]="insurance.insureeId"
+        required
+        minlength="3"
+        #id="ngModel"
+      />
+      <div *ngIf="id.invalid && (id.dirty || id.touched)" class="alert">
+        <div *ngIf="id.errors?.required">Insuree Name is Required!</div>
+
+        <div *ngIf="id.errors?.minlength">
+          Insuree Name must be atleast 3 characters long
+        </div>
+      </div>
+      <br/><br/>
+      <label for="t2"> Farmer Id: </label>
+      <input
+        type="number"
+        name="t2"
+        [(ngModel)]="insurance.farmerId"
+        required
+        minlength="3"
+        #fid="ngModel"
+      />
+      <div *ngIf="fid.invalid && (fid.dirty || fid.touched)" class="alert">
+        <div *ngIf="fid.errors?.required">Farmer ID is Required!</div>
+      </div>
+      <br/><br/>
+      <label for="t3"> Insuree Name: </label>
+      <input
+        type="text"
+        name="t3"
+        [(ngModel)]="insurance.insureeName"
+        required
+        minlength="3"
+        #iname="ngModel"
+      />
+      <div
+        *ngIf="iname.invalid && (iname.dirty || iname.touched)"
+        class="alert"
+      >
+        <div *ngIf="iname.errors?.required">Insuree Name is Required!</div>
+      </div>
+      <br /><br />
+      <label for="t4"> Cause of Loss: </label>
+      <input
+        type="text"
+        name="t4"
+        [(ngModel)]="insurance.causeofloss"
+        required
+        #loss="ngModel"
+      />
+      <div *ngIf="loss.invalid && (loss.dirty || loss.touched)" class="alert">
+        <div *ngIf="loss.errors?.required">
+          Enter Cause of Loss is Required!
+        </div>
+      </div>
+      <br/><br/>
+      <label for="t5">Date of Loss: </label>
+      <input
+        type="date"
+        name="t5"
+        [(ngModel)]="insurance.dateofloss"
+        required
+        #dloss="ngModel"
+        style="width: 180px;"
+      />
+      <div
+        *ngIf="dloss.invalid && (dloss.dirty || dloss.touched)"
+        class="alert"
+      >
+        <div *ngIf="dloss.errors?.required">
+          Enter Cause of Loss is Required!
+        </div>
+      </div>
+      <br/><br/>
+      <label for="t6">Amount: </label>
+      <input
+        type="number"
+        name="t6"
+        [(ngModel)]="insurance.amount"
+        required
+        #am="ngModel"
+      />
+      <div *ngIf="am.invalid && (am.dirty || am.touched)" class="alert">
+        <div *ngIf="am.errors?.required">Enter Cause of Loss is Required!</div>
+      </div>
+      <br /><br />
+      <div style="text-align: center;">
+      <button  class="btn" type="submit">Submit</button>
+    </div></div>
+  </form>
+</div>

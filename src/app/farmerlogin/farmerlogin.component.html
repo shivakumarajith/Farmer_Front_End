@@ -1,0 +1,68 @@
+<body>
+  <div class="main">
+    <form (ngSubmit)="Submitdata()">
+      <div class="login-box" style="border-radius: 5%; box-shadow: black">
+        <img
+          src="assets/farmerDp.jpg"
+          width="135"
+          height="135"
+          style="display: block; margin-left: auto; margin-right: auto"
+        />
+        <h1
+          style="
+            margin-left: 10px;
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+          "
+        >
+          Farmer Login
+        </h1>
+        <br />
+        <label for="t2" class="idspace">Enter Email Id: </label>
+        <input
+          type="email"
+          name="t2"
+          [(ngModel)]="login.email"
+          required
+          email
+          #email="ngModel"
+        />
+        <div
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="alert"
+        >
+          <div *ngIf="email.errors?.required">Email is Required!</div>
+          <div *ngIf="email.errors?.email">
+            Email is Wrong format! Right format : xyx@gmail.com
+          </div>
+        </div>
+        <br /><br />
+
+        <label for="t3" class="passspace">Enter Password: </label>
+        <input
+          type="password"
+          name="t3"
+          [(ngModel)]="login.password"
+          required
+          minlength="6"
+          #pass="ngModel"
+        />
+        <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert">
+          <div *ngIf="pass.errors?.required">Enter your password!</div>
+
+          <div *ngIf="pass.errors?.minlength">
+            Password must be atleast 6 characters
+          </div>
+        </div>
+        <br /><br />
+
+        <div style="text-align: center">
+          <button type="submit" class="btn">Login</button><br /><br />
+
+          <a routerLink="/FarmerRegistration">New User? Register Here!!</a
+          ><br />
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

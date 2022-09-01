@@ -1,0 +1,28 @@
+<div>
+    <h1 style="margin-left: 400px;">FarmerDetails</h1>
+</div>
+<span>
+
+</span>
+<div >
+    <table class="main">
+            <thead >
+            <tr>
+                <th>Farmer ID</th>
+                <th>Farmer First Name</th>
+                <th>Farmer Last Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let f of farmers">
+                    <td>{{f.farmerId}}</td>
+                    <td>{{f.farmerFirstName}}</td>
+                    <td>{{f.farmerLastName}}</td>
+                    <td>{{f.email}}</td>
+                    <td>{{f.contactNo}}</td>
+                </tr>
+            </tbody>
+    </table>
+</div>

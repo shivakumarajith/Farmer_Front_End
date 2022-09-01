@@ -1,0 +1,96 @@
+*{
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 50em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/*.header
+{
+  min-width: fit-content;
+  min-height: 10vh;
+  color: black;
+  background: #ace973;
+  right:0;
+  width: 100vw;
+  margin-bottom: 20px;
+}*/
+a{
+  color: black;
+  text-decoration: none;
+}
+a  :visited{
+  color: #3c40c6;
+}
+ul li
+{
+  list-style: none;
+}
+h4{
+  color: #3c40c6;
+}
+.sideNav
+{
+  position: absolute;
+  background: rgb(171, 220, 237);
+  width:22vw;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  box-shadow:5px  darkgreen ;
+  margin-top: 30px;
+  border-radius: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 24px;
+}
+
+.sideNav li{
+  padding: 20px;
+  color: #7f8c8d;
+  display: flex;
+  
+}
+.sideNav li:hover{
+  background: white;
+  color: #05c46b;
+  border-radius: 10px;
+}
+.main
+{
+  margin-left: 280px;
+  width: 100vw;
+  height: 100vh;
+  position: left;
+}
+
+
+.topnav {
+  background-color: #3096fb;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  /*background-color: #ddd;*/
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #fbfefd;
+  color: white;
+}

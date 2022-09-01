@@ -1,0 +1,165 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<div>
+    <h1 style="margin-left: 400px;"> Place Bid </h1>
+</div>
+<br>
+<div >
+<table class="main">
+          <thead >
+          <tr>
+              <th>Crop Id</th>
+              <th>Farmer id</th>
+              <th>Farmer Name</th>
+              <th>Crop Type</th>
+              <th>Crop Name</th>
+              <th>Fertilizer Type</th>
+              <th>Quantity</th>
+              <th>Current bidding amount </th>
+              <th>Bidding Status</th>
+          </tr>
+          </thead>
+          <tbody >
+              <tr *ngFor="let c of crops">
+
+                  <td>{{c.cropid}}</td>
+                  <td>{{c.farmer?.farmerId}}</td>
+                  <td>{{c.farmer?.farmerFirstName}}</td>
+                  <td>{{c.croptype}}</td>
+                  <td>{{c.cropName}}</td>
+                  <td>{{c.fertilizertype}}</td>
+                  <td>{{c.quantity}}</td>
+                  <td>{{c.baseprice}}</td>
+                  <td>{{c.status}}</td>
+              </tr>
+          </tbody>
+  </table>
+</div>
+<br>
+<button class = "bid" (click)="bid()">
+Place Bid</button>
+<br>
+<br>
+<div *ngIf="div1" >
+<form (ngSubmit)="placeBid()">
+  <div class="login-box" style=" border-radius: 5%; box-shadow: black;">
+    <h1 style="text-align: center;">Place Bid</h1><br>
+    <label for="t1">Crop Id: </label>
+    <input  
+            type = "Number" 
+            name = "t1" 
+            [(ngModel)] = crop.cropId 
+            required
+            #id = "ngModel"          
+    />
+    <div 
+            *ngIf = "id.invalid && (id.dirty || id.touched)"
+            class = "alert">
+        <div *ngIf="id.errors?.required">
+              Crop id is Required!
+        </div>
+    </div>
+    <br><br>
+    <label for="t2">Farmer Id: </label>
+    <input  
+            type = "Number" 
+            name = "t2" 
+            [(ngModel)] = crop.farmerId
+            required
+            #fid = "ngModel"          
+    />
+    <div 
+            *ngIf = "fid.invalid && (fid.dirty || fid.touched)"
+            class = "alert">
+        <div *ngIf="fid.errors?.required">
+              Farmer id is Required!
+        </div>
+    </div>
+    <br><br>
+    <label for="t3">Crop Type: </label>
+    <select class="ctype" [(ngModel)]= crop.cropType name = "t3">
+
+      <option value="Kharif">KHARIF</option>
+      <option value="Rabi">RABI</option>    
+      <option value="Horiculture">HORTICULTURE</option>                                             
+  </select>
+  <br><br>
+  <label for="t5">Crop Name: </label>
+    <input  
+            type = "text" 
+            name = "t5" 
+            [(ngModel)] = crop.cropName 
+            required
+            minlength="3"
+            #cname = "ngModel"          
+    />
+    <div 
+            *ngIf = "cname.invalid && (cname.dirty || cname.touched)"
+            class = "alert">
+        
+        <div *ngIf="cname.errors?.required">
+              Crop Name is Required!
+        </div>
+
+    </div>
+    <br><br>
+  <label for="t6">Fertilizer: </label>
+    <input  
+            type = "text" 
+            name = "t6" 
+            [(ngModel)] = crop.fertilizertype 
+            required
+            minlength="3"
+            #ftype = "ngModel"          
+    />
+    <div 
+            *ngIf = "ftype.invalid && (ftype.dirty || ftype.touched)"
+            class = "alert">
+        
+        <div *ngIf="ftype.errors?.required">
+              Fertilizer Type is Required!
+        </div>
+
+    </div>
+    <br><br>
+    <label for="t7">Quantity: </label>
+    <input  
+            type = "number" 
+            name = "t7" 
+            [(ngModel)] = crop.quantity 
+            required
+            #quan = "ngModel"          
+    />
+    <div 
+            *ngIf = "quan.invalid && (quan.dirty || quan.touched)"
+            class = "alert">
+        
+        <div *ngIf="ftype.errors?.required">
+              Quantity is Required!
+        </div>
+
+    </div>
+    <br><br>
+    <label for="t8">Bid Amount: </label>
+    <input  
+            type = "number" 
+            name = "t8" 
+            [(ngModel)] = crop.baseprice
+            required
+            #bp = "ngModel"          
+    />
+    <div 
+            *ngIf = "bp.invalid && (bp.dirty || bp.touched)"
+            class = "alert">
+        
+        <div *ngIf="bp.errors?.required">
+              Enter the Bid amount!
+        </div>
+    </div>
+    <br><br>
+    <div style="text-align: center;">
+        <button class = "btn"
+            type="submit" > Submit
+    </button>
+</div></div>

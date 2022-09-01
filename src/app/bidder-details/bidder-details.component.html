@@ -1,0 +1,27 @@
+<div>
+    <h1 style="margin-left: 400px;">Bidder Details</h1>
+</div>
+
+<div >
+    <table class="main">
+            <thead >
+            <tr>
+                <th>BidderId</th>
+                <th>Bidder First Name</th>
+                <th>Bidder Last Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bidder of bidders">
+                    <td>{{bidder.bidderId}}</td>
+                    <td>{{bidder.bidderFirstName}}</td>
+                    <td>{{bidder.bidderLastName}}</td>
+                    <td>{{bidder.email}}</td>
+                    <td>{{bidder.contactNo}}</td>
+                </tr>
+            </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,103 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans Extrabold", sans-serif;
+}
+
+body {
+  /*background-image: url("src\assets\farmerhome.jpg");*/
+  /* background-image: url("src/assets/loginbg.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50em;
+  font-family: "Gill Sans Extrabold", sans-serif;
+
+}
+/*.header {
+  min-width: fit-content;
+  min-height: 5vh;
+  color: black;
+  background: rgb(171, 220, 237)3;
+  right: 0;
+  width: 100vw;
+  
+  
+}*/
+a {
+  color: black;
+  text-decoration: none;
+}
+a :visited {
+  color: #45eb8d;
+}
+ul li {
+  list-style: none;
+}
+h4 {
+  color: #45eb8d;
+}
+.sideNav {
+  position: absolute;
+  background:  rgb(171, 220, 237);
+  width: 20vw;
+  height: max-content; 
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  top: 90px;
+  border-radius: 15px;
+}
+/* .sideNav .logo
+  {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+.sideNav li {
+  padding: 30px;
+  color: #ace973;
+  display: flex;
+  /* align-items: ; */
+}
+.sideNav li:hover {
+  background: white;
+  color: #05c46b;
+  border-radius: 10px;
+}
+.main {
+  margin-left: 280px;
+  width: 100vw;
+  height: 100vh;
+  position: left;
+   
+}
+
+.topnav {
+  background-color: #3096fb;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  /*background-color: #ddd;*/
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #fbfefd;
+  color: white;
+}
+
+

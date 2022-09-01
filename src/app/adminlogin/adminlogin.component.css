@@ -1,0 +1,67 @@
+body {
+  
+  background-image: url("src/assets/backgroundAll.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.main {
+  height: 45em;
+}
+.login-box {
+ 
+  background-color: rgb(159, 196, 235);
+  width: 400px;
+  height: 550px;
+
+  color: rgb(15, 14, 14);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  font-family: Cambria;
+  padding: 70px 30px;
+  padding-top: 2em;
+}
+.giveSomeSpace {
+  margin-right: 3%;
+}
+.spacePassword {
+  margin-right: 2%;
+}
+.btn {
+  border: none;
+  color: white;
+  padding: 16px 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #6fb8dc;
+  
+}
+
+.btn:hover {
+  background-color: #4caf50;
+  color: white;
+}
+.idspace {
+  margin-right: 2%;
+}
+.passspace {
+  margin-right: 1%;
+}
+img {
+  border: 1px;
+  border-radius: 8pc;
+  padding: 5px;
+  width: 150px;
+}
